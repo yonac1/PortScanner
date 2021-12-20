@@ -4,7 +4,11 @@ from socket import *
 import optparse
 from threading import *
 
+#establishes a socket in the Internet domain , SOCK_STREAM means that it is a TCP socket.  
 sock = socket(AF_INET, SOCK_STREAM)
+
+#This function gets the paramters : - string -> host ; int -> port 
+#This function prints o
 def connScan(tgtHost, tgtPort):
 	#check if port is open
 	location = (tgtHost,tgtPort)
@@ -12,7 +16,8 @@ def connScan(tgtHost, tgtPort):
                 print "[X] Port %d is opened in %s" % (tgtPort, tgtHost)
      
 
-
+#This function gets the paramters : - string -> host ; array of strings -> ports 
+#This function prints all the open ports 
 def portScan(tgtHost, tgtPorts):
 	try:
 		tgtIP = gethostbyname(tgtHost) 	
